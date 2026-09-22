@@ -1189,33 +1189,3 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-````
-
-### Also add `runtime.txt`
-
-Because your current Streamlit deployment is using **Python 3.14**, add this file:
-
-python-3.12
-
-### `requirements.txt`
-
-Use:
-
-streamlit
-crewai
-groq
-pypdf
-
-So your GitHub repository becomes:
-
-```text
-resume-lens-ai/
-│
-├── app.py
-├── requirements.txt
-├── runtime.txt
-├── .gitignore
-└── README.md
-```
-
-**Important:** after uploading `runtime.txt`, redeploy/reboot the Streamlit app. The previous error was happening during the CrewAI → ChromaDB → Pydantic import, before ResumeLens AI even reached Groq.
