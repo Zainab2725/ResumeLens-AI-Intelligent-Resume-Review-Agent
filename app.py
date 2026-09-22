@@ -1159,7 +1159,7 @@ if result:
     )
 
     # Create TXT report
-   txt_report = json.dumps(result, indent=2, ensure_ascii=False)
+txt_report = json.dumps(result, indent=2, ensure_ascii=False)
 
     st.download_button(
         label="Download Report",
