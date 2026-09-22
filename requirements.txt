@@ -1,5 +1,4 @@
 streamlit
 crewai
-litellm
 groq
 pypdf
