@@ -1,6 +1,7 @@
 import json
 import re
 
+
 import streamlit as st
 from pypdf import PdfReader
 from crewai import Agent, Task, Crew, Process, LLM
@@ -294,10 +295,7 @@ def extract_pdf_text(uploaded_file):
 # ============================================================
 # LLM CONFIGURATION
 # ============================================================
-
 def create_llm():
-    """Create the CrewAI LLM using the Streamlit secret."""
-
     try:
         api_key = st.secrets["GROQ_API_KEY"]
     except Exception:
@@ -313,11 +311,13 @@ def create_llm():
         )
 
     return LLM(
-        model=MODEL_NAME,
+        model="groq/openai/gpt-oss-120b",
         api_key=api_key,
         temperature=0.1,
+        additional_params={
+            "cache_breakpoint": None
+        },
     )
-
 
 # ============================================================
 # JSON CLEANING
