@@ -1158,9 +1158,13 @@ if result:
         ensure_ascii=False,
     )
 
-    txt_report = json.dumps(result, indent=2, ensure_ascii=False)
+    txt_report = json.dumps(
+        result,
+        indent=2,
+        ensure_ascii=False,
+    )
 
-st.download_button(
+    st.download_button(
         label="Download Report",
         data=txt_report,
         file_name="resume_review_report.txt",
